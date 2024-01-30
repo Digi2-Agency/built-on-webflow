@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "@/devlink/global.css";
 import { DevLinkProvider } from "@/devlink";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,6 +16,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <SpeedInsights />
+      </head>
       <body className="green">
         <DevLinkProvider>
           {children}
